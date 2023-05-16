@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "778780860998",
+    "project_id": "stepzilla-fitness",
+    "storage_bucket": "stepzilla-fitness.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:778780860998:android:e1ba678b520cde8bbae047",
+        "android_client_info": {
+          "package_name": "com.example.stepzilla"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "778780860998-742qmuu9ipdcgrdkilte04v2s28d4nb2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4iQZ0m_nq_OecJ_6AmxzUVAhI_7xasJY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "778780860998-742qmuu9ipdcgrdkilte04v2s28d4nb2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
