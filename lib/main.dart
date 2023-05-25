@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:stepzilla/NavBar.dart';
 import 'package:stepzilla/widgets/HomeWidget.dart';
 import 'package:stepzilla/widgets/AuthPage.dart';
 
@@ -55,7 +56,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 return AuthPage();
               }
             }
-        )
+        ),
+
     );
   }
 }
