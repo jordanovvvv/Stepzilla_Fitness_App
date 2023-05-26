@@ -16,12 +16,12 @@ class NavBar extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           UserAccountsDrawerHeader(
-            accountName: Text(auth.currentUser!.displayName!),
+            accountName: Text('Welcome!'),
             accountEmail: Text(auth.currentUser!.email!),
             currentAccountPicture: CircleAvatar(
               child: ClipOval(
                 child: Image.network(
-                  auth.currentUser!.photoURL.toString(),
+                  'https://images.unsplash.com/photo-1533738363-b7f9aef128ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=435&q=80',
                   fit: BoxFit.cover,
                   width: 90,
                   height: 90,
@@ -37,7 +37,7 @@ class NavBar extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: Icon(Icons.favorite),
+            leading: Icon(Icons.home),
             title: Text('Home'),
               onTap: () {
                 Navigator.push(
@@ -57,13 +57,23 @@ class NavBar extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.share),
-            title: Text('Share'),
-            onTap: () => null,
-          ),
-          ListTile(
             leading: Icon(Icons.notifications),
-            title: Text('Request'),
+            title: Text('Notifications'),
+            trailing: ClipOval(
+              child: Container(
+                color: Colors.red,
+                width: 24,
+                height: 24,
+                child: Center(
+                  child: Text(
+                    '8',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14),),
+                ),
+
+              ),
+            ),
           ),
           Divider(),
           ListTile(
@@ -78,9 +88,9 @@ class NavBar extends StatelessWidget {
           ),
           Divider(),
           ListTile(
-            title: Text('Exit'),
+            title: Text('Sign out'),
             leading: Icon(Icons.exit_to_app),
-            onTap: () => null,
+            onTap: () => FirebaseAuth.instance.signOut(),
           ),
         ],
       ),

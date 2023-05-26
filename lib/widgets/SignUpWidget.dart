@@ -1,8 +1,11 @@
+import 'dart:io';
+
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:lottie/lottie.dart';
 import '../models/utils.dart';
 
@@ -20,6 +23,19 @@ class SignUpWidget extends StatefulWidget{
   _SignUpWidgetState createState() => _SignUpWidgetState();
 }
 class _SignUpWidgetState extends State<SignUpWidget>{
+
+  File? _image;
+
+  Future getImage() async {
+    final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+    if(image == null) return;
+
+    final imageTemp = File(image.path);
+
+    setState((){
+      _image = imageTemp;
+      });
+  }
 
   final formKey = GlobalKey<FormState>();
   final emailController = TextEditingController();
@@ -53,6 +69,7 @@ class _SignUpWidgetState extends State<SignUpWidget>{
 
       Utils.showSnackBar(e.message);
     }
+
 
     Navigator.pop(context);
 
@@ -103,6 +120,13 @@ class _SignUpWidgetState extends State<SignUpWidget>{
             value != null && value.length<6
             ? 'Enter min. 6 characters' : null,
             ),
+              SizedBox(height: 10,),
+            TextButton(
+                onPressed: getImage,
+                child: _image == null ?
+                  const Text('Click here to select image!')
+                    :const Text('Picture selected! Click again to change!')
+            ),
             SizedBox(height: 20),
             ElevatedButton.icon(
             style: ElevatedButton.styleFrom(
@@ -143,5 +167,6 @@ class _SignUpWidgetState extends State<SignUpWidget>{
     );
 
   }
+
 
 }
