@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_settings_screens/flutter_settings_screens.dart';
+
 import 'package:stepzilla/NavBar.dart';
 import 'package:stepzilla/widgets/HomeWidget.dart';
 import 'package:stepzilla/widgets/AuthPage.dart';
@@ -8,6 +10,7 @@ import 'package:stepzilla/widgets/AuthPage.dart';
 Future main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  await Settings.init(cacheProvider: SharePreferenceCache());
   runApp(const MyApp());
 }
 

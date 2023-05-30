@@ -116,6 +116,7 @@ class _HomeWidgetState extends State<HomeWidget>{
                     var motion = context.watch<ValueNotifier<Motion>>();
                     return Column(
                       children: [
+                        SizedBox(height: 10),
                         ListTile(
                           title: Text(
                               motion.value.averageActivePace
@@ -123,18 +124,21 @@ class _HomeWidgetState extends State<HomeWidget>{
                               style: Theme.of(context).textTheme.headline4),
                           subtitle: const Text('Average Active Pace'),
                         ),
+                        SizedBox(height: 10),
                         ListTile(
                           title: Text(
                               motion.value.currentPace.toStringAsFixed(2),
                               style: Theme.of(context).textTheme.headline4),
                           subtitle: const Text('Current Pace'),
                         ),
+                        SizedBox(height: 10),
                         ListTile(
                           title: Text(
                               motion.value.distance.toStringAsFixed(2),
                               style: Theme.of(context).textTheme.headline4),
                           subtitle: const Text('Distance'),
                         ),
+                        SizedBox(height: 10),
                         ListTile(
                           title: Text(
                               motion.value.floorsAscended
@@ -142,6 +146,7 @@ class _HomeWidgetState extends State<HomeWidget>{
                               style: Theme.of(context).textTheme.headline4),
                           subtitle: const Text('Floors Ascended'),
                         ),
+                        SizedBox(height: 10),
                         ListTile(
                           title: Text('${motion.value.numberOfSteps}',
                               style: Theme.of(context).textTheme.headline4),

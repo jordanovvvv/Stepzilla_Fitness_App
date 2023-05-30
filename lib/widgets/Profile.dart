@@ -29,7 +29,6 @@ class _ProfileState extends State<Profile>{
         title: const Text('Profile'),
       ),
       body: Stack(
-
         alignment: Alignment.center,
         children: [
           Positioned.fill(
@@ -41,11 +40,27 @@ class _ProfileState extends State<Profile>{
             ),
           ),
           buildTop(),
-          buildContent()
+          buildContent(),
+
         ],
       )
     );
   }
+  Widget buildRuns(){
+    return SingleChildScrollView(
+      child: Row(
+        children: [
+          Divider(),
+          SizedBox(height: 10,),
+          ListTile(
+            title: Text('Test'),
+            subtitle: Text('test'),
+          )
+        ],
+      ),
+    );
+  }
+
   Widget buildContent() {
     return Column(
       children: [

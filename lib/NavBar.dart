@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:stepzilla/widgets/HomeWidget.dart';
 import 'package:stepzilla/widgets/Profile.dart';
+import 'package:stepzilla/widgets/Settings.dart';
 
 class NavBar extends StatelessWidget {
 
@@ -79,7 +80,12 @@ class NavBar extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.settings),
             title: Text('Settings'),
-            onTap: () => null,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Settings()),
+              );
+            },
           ),
           ListTile(
             leading: Icon(Icons.description),
