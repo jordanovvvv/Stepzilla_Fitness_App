@@ -1,6 +1,6 @@
-# stepzilla
+# Stepzilla Fitness App
 
-A new Flutter project.
+Cross-Platform App for tracking your steps using Flutter.
 
 ## Getting Started
 
